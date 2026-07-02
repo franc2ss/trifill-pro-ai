@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #080808;
+  --foreground: #f5f1e9;
+  --primary: #c99a55;
+  --primary-dark: #a97939;
+  --primary-light: #241d14;
+  --secondary: #f0ca88;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --font-sans: var(--font-noto-sans-kr), var(--font-inter), system-ui, sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* :root와 body 레벨에서 완벽하게 차콜/블랙 다크모드를 선언합니다 */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background: #030303 !important; /* 컴포넌트가 bg-white를 들고 와도 이기도록 !important 추가 */
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  position: relative;
+  z-index: 1;
+}
+
+button, a { touch-action: manipulation; }
+
+::selection {
+  background: color-mix(in srgb, var(--primary) 20%, transparent);
+}
+
+/* 기존의 고급스러운 럭셔리 질감 노이즈 필터 효과 보존 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+  z-index: 0; /* 오버레이가 콘텐츠를 가리지 않도록 배경으로 이동 */
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #4a3922; border-radius: 20px; }
+
+/* 💡 만약 특정 div가 bg-white를 들고 있어도 무시하도록 안전장치 추가 */
+.min-h-screen, main {
+  background-color: transparent !important;
+}
