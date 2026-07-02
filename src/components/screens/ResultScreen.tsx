@@ -136,7 +136,7 @@ export function ResultScreen({
           <h3 className="mt-2 text-2xl font-light leading-tight tracking-tight">{copy.title}</h3>
           <div className="relative mt-6 flex min-h-56 items-center justify-center overflow-hidden rounded-[1.5rem] bg-[#080808]">
             <div className="absolute inset-0 bg-[#090909]" />
-            <Image src="/images/trifill-pro.png" alt="Trifill PRO device" width={360} height={260} className="relative h-52 w-auto object-contain" />
+            <Image src="/images/trifill-pro-new.png.png" alt="Trifill PRO device" width={360} height={260} className="relative h-52 w-auto object-contain" />
           </div>
           <h4 className="mt-6 text-xl font-light">{copy.program}</h4>
           <div className="mt-5 space-y-4">
