@@ -46,7 +46,7 @@ export function WelcomeScreen({ onStart }: WelcomeScreenProps) {
         </div>
 
         <div className="pointer-events-none absolute right-[-26%] top-[42%] h-[103%] w-[103%] -translate-y-1/2">
-          <Image src="/images/trifill-pro-new.png.png" alt="trifill-pro-new" fill priority className="object-contain" />
+          <Image src="/images/trifill-pro.png" alt="trifill-pro" fill priority className="object-contain" />
         </div>
 
         <div className="mt-auto pb-5 text-center">
